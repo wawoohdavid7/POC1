@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.MainPage">
+    <StackLayout Orientation="Vertical" >
+        <StackLayout Orientation="Horizontal" Spacing="5" >
+            <Label Text="Use stored card" />
+            <Switch IsToggled="{Binding IsStoredSelected, Mode=TwoWay}"  />
+        </StackLayout>
+        <StackLayout Orientation="Vertical" IsVisible="{Binding IsStoredSelected}">
+            <local:BindablePicker SelectedIndex="{Binding SelectedCardIndex,Mode=TwoWay}" DisplayProperty="CCardNo" ItemsSource="{Binding CardList}" SelectedItem="{Binding SelectedCard, Mode=TwoWay}" />
+            <Image Source="{Binding SelectedCard.CardIcon}" />
+        </StackLayout>
+        
+        <Button Text="SUmbit" Command="{Binding SquareRootCommand}"/>
+        <Label Text="{Binding SelectedCard.DisplayText}" />
+        <Label Text="{Binding SelectedCardIndex}" />
+    </StackLayout>
+
+</ContentPage>
