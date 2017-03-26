@@ -55,7 +55,6 @@ namespace App1
                 SelectedCard = null;
             });
 
-            SelectedCardIndex = 0;
         }
 
         public ICommand SquareRootCommand { get; private set; }
