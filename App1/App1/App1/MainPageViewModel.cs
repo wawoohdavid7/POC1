@@ -33,27 +33,11 @@ namespace App1
             };
             SelectedCard = null;
 
-            SquareRootCommand = new Command(() => 
+            SquareRootCommand = new Command(async () => 
             {
-                //CardList = new List<CardListItem>
-                //{
-                //new CardListItem
-                //{
-                //    CCardNo="003",
-                //    ExpirationDate = new DateTime(2018,3,3)
-                //},
-                //new CardListItem
-                //{
-                //    CCardNo="004",
-                //    ExpirationDate = new DateTime(2018,4,4)
-                //},
-                //};
-
-
-                //SelectedCard = CardList.FirstOrDefault();
-
+                await Task.Delay(3000);
                 SelectedCard = null;
-            });
+            }, ()=> _isStoredSelected);
 
         }
 
@@ -109,6 +93,8 @@ namespace App1
                 {
                     SetDefaultCard();
                 }
+
+                ((Command)SquareRootCommand).ChangeCanExecute();
             }
         }
 
