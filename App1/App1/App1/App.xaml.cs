@@ -13,10 +13,11 @@ namespace App1
 		{
 			InitializeComponent();
 
-			MainPage = new App1.MainPage();
-		}
+            //MainPage = new App1.MainPage();
+			MainPage = new App1.MainPage2();
+        }
 
-		protected override void OnStart()
+        protected override void OnStart()
 		{
 			// Handle when your app starts
 		}
